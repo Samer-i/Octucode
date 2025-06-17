@@ -6,6 +6,8 @@ class Snake:
         self.turtles = []
         self.position = [(-40,0), (-20,0), (0,0)]
         self.create_snake()
+        self.head = self.turtles[-1]
+        
     def create_snake(self):
         for i in range(len(self.position)):
             new_turtule = Turtle("square")
@@ -19,15 +21,22 @@ class Snake:
             self.turtles[i].goto(self.turtles[i+1].pos())
         self.turtles[-1].forward(20)
         
+    def extend(self):
+        new_segment = Turtle("square")
+        new_segment.color("white")
+        new_segment.penup()
+        new_segment.goto[self.turtles[0].pos()]
+        self.turtles.insert(0,new_segment)
+        
     def up(self):
-        self.turtles[-1].setheading(90)
+        self.head.setheading(90)
     
     def down(self):
-        self.turtles[-1].setheading(279)
+        self.head.setheading(279)
         
     def right(self):
-        self.turtles[-1].setheading(0)
+        self.head.setheading(0)
     
     def left(self):
-        self.turtles[-1].setheading(180)
+        self.head.setheading(180)
         

@@ -1,0 +1,40 @@
+class Human():
+    def __init__(self):
+        self.energy = 100
+        
+    def walk(self):
+        print("I walk so fast")
+        
+        
+class Athlete(Human):
+    def __init__(self):
+        super().__init__()
+    def run(self):
+        print("I run so fast, faster than a bullet")
+    def walk(self):
+        super().walk()
+        print("I walk so fast, and I'm super walker")
+    
+runner = Athlete()
+runner.run()
+runner.walk()
+
+class Light():
+    def __init__(self):
+        self.energy = 100
+    def turn_on(self):
+        print("I'm on")
+    def turn_out(self):
+        print("I'm off")
+        
+class SmartLight(Light):
+    def __init__(self):
+        super().__init__()
+    def connect_WIF(self):
+        print("I'm connected to the WIF")
+        
+superlight = SmartLight()
+superlight.turn_on()
+superlight.turn_out()
+superlight.connect_WIF
+        
